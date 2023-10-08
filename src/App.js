@@ -10,9 +10,11 @@ function App() {
     <div id="page-top">
       <Nav />
       <Routes>
+        <Route path="*" Component={Home} />
         <Route path="/home" Component={Home} />
-        <Route path="/TripsList" Component={TripsList} />
-        <Route path="/TripDetail" Component={TripDetail} />
+        <Route path="/trips" Component={TripsList} />
+        <Route path="/TripDetail/:tripId" Component={TripDetail} />
+        {/* <Route path="/TripDetail/:tripDiff" Component={TripDetail} /> */}
       </Routes>
     </div>
   );

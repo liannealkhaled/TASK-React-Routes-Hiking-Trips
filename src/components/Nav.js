@@ -8,7 +8,7 @@ function Nav() {
       id="mainNav"
     >
       <div className="container">
-        <NavLink className="navbar-brand" to="/Home">
+        <NavLink className="navbar-brand" to="/">
           Hike
         </NavLink>
 
@@ -25,7 +25,7 @@ function Nav() {
             <li className="nav-item mx-0 mx-lg-1">
               <NavLink
                 className="nav-link py-3 px-0 px-lg-3 rounded"
-                to="/TripsList"
+                to="/trips"
               >
                 Trips
               </NavLink>

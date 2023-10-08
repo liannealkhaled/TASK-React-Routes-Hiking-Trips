@@ -1,8 +1,30 @@
-import React from 'react';
-import tripsData from '../tripsData';
+import React, { useState } from "react";
+import tripsData from "../tripsData";
+import { useParams } from "react-router-dom";
+
+//  list then item then detalis
 
 function TripDetail() {
-  const trip = tripsData[0];
+  const { tripId } = useParams();
+  // const { tripDiff } = useParams();
+
+  const trip = tripsData.find((trip) => {
+    return trip.id == tripId;
+  });
+  // .filter((trip) => {
+  //   return trip.difficulty == tripDiff;
+  // });
+
+  // const trip2 = tripsData.map((trip) => {
+  //   return trip.difficulty == tripDiff;
+  // });
+
+  // const [counter, setCounter] = useState();
+
+  // const filterbydiff = (trip) => {
+  //   return trip.difficulty == tripDiff;
+  // };
+
   return (
     <div className="modal-dialog modal-xl">
       <div className="modal-content">
