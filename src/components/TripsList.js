@@ -8,6 +8,10 @@ function TripsList() {
   const trips = tripsData
     .filter((trip) => trip.name.toLowerCase().includes(query.toLowerCase()))
     .map((trip, index) => <TripItem trip={trip} key={index} />);
+
+  // .filter((trip) => {
+  //   return trip.difficulty == "Easy";
+  // });``````
   return (
     <section className="page-section portfolio" id="portfolio">
       <div className="container">

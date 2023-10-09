@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import tripsData from "../tripsData";
 import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 //  list then item then detalis
 
@@ -11,6 +12,9 @@ function TripDetail() {
   const trip = tripsData.find((trip) => {
     return trip.id == tripId;
   });
+
+  // let [searchParams, setSearchParams] = useSearchParams()
+
   // .filter((trip) => {
   //   return trip.difficulty == tripDiff;
   // });
@@ -19,8 +23,13 @@ function TripDetail() {
   //   return trip.difficulty == tripDiff;
   // });
 
-  // const [counter, setCounter] = useState();
+  const [counter, setCounter] = useState();
 
+  let filtered = tripsData.filter(() => {
+    return trip.difficulty == "Easy";
+  });
+
+  const searchByDifficulty = () => {};
   // const filterbydiff = (trip) => {
   //   return trip.difficulty == tripDiff;
   // };
