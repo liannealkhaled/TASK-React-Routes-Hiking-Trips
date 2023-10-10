@@ -5,13 +5,13 @@ import TripItem from "./TripItem";
 
 function TripsList() {
   const [query, setQuery] = useState("");
+  const [diff, setDiff] = useState("");
+
   const trips = tripsData
     .filter((trip) => trip.name.toLowerCase().includes(query.toLowerCase()))
+    .filter((trip) => trip.difficulty.includes(diff))
     .map((trip, index) => <TripItem trip={trip} key={index} />);
 
-  // .filter((trip) => {
-  //   return trip.difficulty == "Easy";
-  // });``````
   return (
     <section className="page-section portfolio" id="portfolio">
       <div className="container">
@@ -21,8 +21,18 @@ function TripsList() {
         <br />
         <SearchBar setQuery={setQuery} />
         <center>
-          <button className="btn btn-primary btn-xl">Easy</button>
-          <button className="btn btn-primary btn-xl">Moderate</button>
+          <button
+            className="btn btn-primary btn-xl"
+            onClick={() => setDiff("easy")}
+          >
+            Easy
+          </button>
+          <button
+            className="btn btn-primary btn-xl"
+            onClick={() => setDiff("moderate")}
+          >
+            Moderate
+          </button>
           <button className="btn btn-primary btn-xl">Hard</button>
         </center>
         <div className="divider-custom">
